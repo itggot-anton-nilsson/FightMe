@@ -1,8 +1,8 @@
 class Player
   def initialize(x)
     @x = x
-    @y = 350
-    @guy = Gosu::Image.new('Media/Guy.png')
+    @y = 250
+    @guy = Gosu::Image.new('Media/Nazi.png')
   end
 
   def draw
