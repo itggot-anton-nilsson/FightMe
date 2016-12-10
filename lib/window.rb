@@ -4,8 +4,16 @@ class Window < Gosu::Window
     super 640, 480, false
     self.caption = 'A great motherfucking game'
     @back_image = Gosu::Image.new('Media/Dojo.png', :tileable => true)
-    @player1 = Player.new(40)
-    @player2 = Player.new(500)
+    @player1 = Player.new(0, self)
+    @player2 = Player.new(400, self)
+  end
+
+  def x
+    self.width
+  end
+
+  def y
+    self.height
   end
 
   def draw
@@ -15,6 +23,9 @@ class Window < Gosu::Window
   end
 
   def update
+    @player1.update
+    @player2.update
+
     Control.buttonPress(@player1, @player2)
   end
 end
