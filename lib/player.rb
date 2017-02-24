@@ -20,10 +20,8 @@ class Player
   end
 
   def walk(number)
-
     Animation.moving(self)
     @x += number
-
   end
 
 end

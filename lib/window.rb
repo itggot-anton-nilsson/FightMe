@@ -3,7 +3,7 @@ class Window < Gosu::Window
   def initialize
     super 640, 480, false
     self.caption = 'A great motherfucking game'
-    @back_image = Gosu::Image.new('Media/Dojo.png', :tileable => true)
+    @back_image = Gosu::Image.new('media/Dojo.png', :tileable => true)
     @player1 = Player.new(0, self)
     @player2 = Player.new(400, self)
   end

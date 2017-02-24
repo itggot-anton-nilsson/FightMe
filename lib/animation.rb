@@ -1,7 +1,6 @@
 class Animation
 
   def self.setup(char, player)
-
     @animation = {
         'attack1': [],
         'attack2': [],
@@ -12,17 +11,16 @@ class Animation
         'walking': []
     }
 
-    @animation.each do |files|
-      p files
-      Dir[File.dirname(__FILE__) + "/media/#{char}/#{files}*.png"].each { |file| puts file }
+    @animation.keys.each do |files|
+      Dir.glob("media/#{char}/*#{files}.png") {|file| @animation[files] << Gosu::Image.new(file)}
     end
 
-    player.change(Gosu::Image.new("media/#{char}/0_idle.png"))
+    player.change(@animation[:idle][0])
 
   end
 
   def self.moving(player)
-    # player.change()
+    player.change(@animation[:walking][0])
   end
 
 end

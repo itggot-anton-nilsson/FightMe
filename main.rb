@@ -1,5 +1,5 @@
 require 'gosu'
-Dir[File.dirname(__FILE__) + '/lib/*.rb'].each {|file| require file}
+Dir.glob("lib/*.rb") {|file| require_relative file}
 
 wd = Window.new
 wd.show
