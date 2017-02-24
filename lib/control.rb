@@ -1,6 +1,5 @@
 class Control
-
-  def self.buttonPress(player, player1)
+  def self.processInput(player, player1)
     if Gosu::button_down? Gosu::KbEscape
       exit
     end
@@ -20,7 +19,5 @@ class Control
     if Gosu::button_down? Gosu::KbD
       player.walk(2)
     end
-
   end
-
 end

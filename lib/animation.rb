@@ -23,4 +23,8 @@ class Animation
     player.change(@animation[:walking][0])
   end
 
+  def self.idle(player)
+    player.change(@animation[:idle][0])
+  end
+
 end
