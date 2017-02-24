@@ -1,12 +1,10 @@
 class Player
   def initialize(x, window)
-    Animation.setImage('Nazi', self)
+    Animation.setup('nazi', self)
     @window = window
     @x = x
     @y = 150
-
-    @x_vel = 0
-
+    @i = 1
   end
 
   def change(image)
@@ -19,14 +17,12 @@ class Player
 
   def update
 
-    @x += @x_vel
-
   end
 
   def walk(number)
 
     Animation.moving(self)
-    @x_vel += number
+    @x += number
 
   end
 

@@ -1,12 +1,28 @@
 class Animation
 
-  def self.setImage(char, player)
-    @char = char
-    player.change(Gosu::Image.new("Media/#{char}/#{char}_standing.png"))
+  def self.setup(char, player)
+
+    @animation = {
+        'attack1': [],
+        'attack2': [],
+        'block1': [],
+        'block2': [],
+        'jump': [],
+        'idle': [],
+        'walking': []
+    }
+
+    @animation.each do |files|
+      p files
+      Dir[File.dirname(__FILE__) + "/media/#{char}/#{files}*.png"].each { |file| puts file }
+    end
+
+    player.change(Gosu::Image.new("media/#{char}/0_idle.png"))
+
   end
 
   def self.moving(player)
-    player.change(Gosu::Image.new("Media/#{@char}/#{@char}_attack1.png"))
+    # player.change()
   end
 
 end
