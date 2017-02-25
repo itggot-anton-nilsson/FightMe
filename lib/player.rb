@@ -1,6 +1,8 @@
 class Player
   def initialize(x, window)
     Animation.setup('nazi', self)
+    @attack1 = Attack.new(15, 10)
+    @attack2 = Attack.new(10, 15)
     @window = window
     @x = x
     @y = 150
@@ -15,6 +17,14 @@ class Player
     @moving = true
     @x += number
     Animation.moving(self)
+  end
+
+  def attack(whatAttack)
+    if whatAttack == 1
+      @attack1.performeAttack
+    else
+      @attack2.performeAttack
+    end
   end
 
   def change(image)
