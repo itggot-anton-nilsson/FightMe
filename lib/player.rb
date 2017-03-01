@@ -1,12 +1,12 @@
 class Player
+    @moving = false
   def initialize(x, window)
     Animation.setup('nazi', self)
-    @attack1 = Attack.new(15, 10)
-    @attack2 = Attack.new(10, 15)
+    @attack1 = Attack.new(15, 10, 1, self)
+    @attack2 = Attack.new(10, 15, 2, self)
     @window = window
     @x = x
     @y = 150
-    @moving = false
   end
 
   def idle
